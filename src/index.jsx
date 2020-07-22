@@ -5,7 +5,7 @@ import Projects from "./projects.jsx";
 import Education from "./education.jsx";
 import Contact from "./contact.jsx";
 import About from "./about.jsx";
-import NavBar from "./navbar/NavBar.jsx"
+import NavBar from "./navbar/NavBar.jsx";
 
 class HomeComponent extends Component {
   constructor(props){

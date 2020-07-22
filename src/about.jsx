@@ -6,7 +6,7 @@ class About extends Component {
       <div className="content-area">
         <div className="text-area">
           <h2 style={{display: "block", margin: "auto"}}>About</h2>
-          <img style={{display: "block", margin: "auto"}} src="./src/suit_boi.jpg" height="300px" width="300px"/>
+          <img style={{display: "block", margin: "auto"}} src="./images/suit_boi.jpg" height="300px" width="300px"/>
           <p>
             I am a recent graduate from Iowa State with a b.s. in Computer Engineering. My coursework was very diverse, ranging from software development to computer architecture and circuits. My focus was in software, and did several software projects throughout my classes.
             <br/><br/>My skills are mainly in web development. I have done several projects using Node.js and MySQL, as well as some projects with React.js. I have good knowledge of Java and C, which were the languages my college classes were taught in.
