@@ -6,41 +6,70 @@ import Education from "./education.jsx";
 import Contact from "./contact.jsx";
 import About from "./about.jsx";
 import NavBar from "./navbar/NavBar.jsx";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useLocation
+} from "react-router-dom";
 
 class HomeComponent extends Component {
   constructor(props){
     super(props);
     this.redirect = this.redirect.bind(this);
     this.state = {
-      content: <Home/>
+      redirect: <Redirect to="/"/>
     };
   }
   redirect(route){
     let state = "";
     switch(route){
-      case "Home": state = <Home/>;break;
-      case "About": state = <About/>;break;
-      case "Education": state = <Education/>;break;
-      case "Projects": state = <Projects/>;break;
-      case "Contact": state = <Contact/>;break;
+      case "Home": state = <Redirect to="/"/>;break;
+      case "About": state = <Redirect to="/about"/>;break;
+      case "Education": state = <Redirect to="/education"/>;break;
+      case "Projects": state = <Redirect to="/projects"/>;break;
+      case "Contact": state = <Redirect to="/contact"/>;break;
     }
     if(state != ""){
-      this.setState({content: state});
+      this.setState({redirect: state});
     }
   }
   render(){
     return(
       <div>
+
         <NavBar
           title="Garet Phelps"
           pages={
-            ["About", "Education", "Projects", "Contact"]
+            ["Home", "About", "Education", "Projects", "Contact"]
           }
           disappearOnScroll={false}
           redirect={(route) => this.redirect(route)}
         />
+
         <div id="content">
-          {this.state.content}
+          <Router>
+          {this.state.redirect}
+            <Switch>
+              <Route exact path="/">
+                <Home/>
+              </Route>
+              <Route exact path="/about">
+                <About/>
+              </Route>
+              <Route exact path="/education">
+                <Education/>
+              </Route>
+              <Route exact path="/projects">
+                <Projects/>
+              </Route>
+              <Route exact path="/contact">
+                <Contact/>
+              </Route>
+            </Switch>
+          </Router>
         </div>
       </div>
     );

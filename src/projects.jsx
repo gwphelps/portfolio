@@ -144,7 +144,9 @@ class Projects extends Component {
       }
       else{
         if(i != id){
-          projects[i].hidden = true;
+          if(window.innerWidth >= 640){
+            projects[i].hidden = true;
+          }
         }
         else{
           projects[i].focused = true;
