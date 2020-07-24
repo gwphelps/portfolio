@@ -19,6 +19,7 @@ class Contact extends Component {
             <i className="fa fa-linkedin fa-2x"></i>
             <a href="https://www.linkedin.com/in/garet-phelps/" style={{paddingLeft: "10px"}}>linkedin.com/in/garet-phelps</a>
           </div>
+
         </div>
       </div>
     );
