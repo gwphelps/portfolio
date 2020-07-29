@@ -54,7 +54,7 @@ class HomeComponent extends Component {
           {this.state.redirect}
             <Switch>
               <Route exact path="/">
-                <Home/>
+                <Home/>  
               </Route>
               <Route exact path="/about">
                 <About/>
